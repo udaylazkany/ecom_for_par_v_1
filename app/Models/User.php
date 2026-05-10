@@ -52,4 +52,20 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class);
     }
+     public function hasAnyRole(array $roles): bool
+    {
+        return in_array($this->role, $roles);
+    }
+
+  
+    public function isUser(): bool
+    {
+        return $this->role === 'user';
+    }
+
+ 
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
 }
