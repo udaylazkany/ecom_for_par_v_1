@@ -10,7 +10,7 @@ class CartRepository implements CartRepositoryInterface
 {
    public function addToCart($cartId, $productId, $quantity)
 {
-    return PerformanceAspect::monitor("AddToCart", function () use ($cartId, $productId, $quantity) {
+    return PerformanceAspect::measure("AddToCart", function () use ($cartId, $productId, $quantity) {
 
         return DB::transaction(function () use ($cartId, $productId, $quantity) {
 

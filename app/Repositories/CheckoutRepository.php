@@ -15,7 +15,7 @@ class CheckoutRepository implements CheckoutRepositoryInterface
 {
     public function checkout($userId)
     {
-        return PerformanceAspect::monitor("Checkout", function () use ($userId) {
+        return PerformanceAspect::measure("Checkout", function () use ($userId) {
 
             return DB::transaction(function () use ($userId) {
 

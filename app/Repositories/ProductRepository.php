@@ -18,7 +18,7 @@ class ProductRepository
 
   public function getAllProducts()
 {
-    return PerformanceAspect::monitor("GetAllProducts", function () {
+    return PerformanceAspect::measure("GetAllProducts", function () {
         return Cache::remember('products_list', 60, function () {
             return Product::all();
         });
