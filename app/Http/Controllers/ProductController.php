@@ -37,4 +37,16 @@ class ProductController extends Controller
         $data = $this->service->getAllProducts();
         return response()->json($data);
     }
+    public function baseline()
+{
+    $data =  $this->service->baselineFetch();
+    return response()->json($data);
+}
+public function loadBalancedFetchParallel()
+{
+    $data = $this->service->loadBalancedFetchParallel();
+    return response()->json($data); 
+}
+
+
 }

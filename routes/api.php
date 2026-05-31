@@ -31,9 +31,11 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
 Route::middleware(['auth:sanctum', 'role:user'])->group(function () {
  Route::post('/cart/add', [CartController::class, 'add']);
  Route::post('/checkout', [CheckoutController::class, 'checkout']);
- Route::get('/getallproduct', [ProductController::class, 'getallproduct']);
 
 
 });
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
+Route::get('/getallproduct', [ProductController::class, 'getallproduct']);
+Route::get('/baseline', [ProductController::class, 'baseline']);
+Route::get('/loadBalancedFetchParallel', [ProductController::class, 'loadBalancedFetchParallel']);

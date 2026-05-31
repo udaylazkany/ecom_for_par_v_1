@@ -24,4 +24,13 @@ class ProductService
     {
         return $this->repo->getAllProducts();
     }
+    public function baselineFetch()
+    {
+        return $this->repo->baselineFetch();
+    }
+    public function loadBalancedFetchParallel()
+{
+    return $this->repo->loadBalancedFetchParallel();
+}
+
 }
