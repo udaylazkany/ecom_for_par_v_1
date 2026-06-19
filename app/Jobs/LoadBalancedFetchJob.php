@@ -14,9 +14,9 @@ class LoadBalancedFetchJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $backoff = 30;
-    public ?string $serverName = null; // ← تعديل هنا
+    public ?string $serverName = null; 
 
-    public function __construct(?string $serverName = null) // ← تعديل هنا
+    public function __construct(?string $serverName = null) 
     {
         $this->serverName = $serverName;
     }

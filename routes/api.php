@@ -25,17 +25,17 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
- Route::post('/products', [ProductController::class, 'store']);
 
 });
 Route::middleware(['auth:sanctum', 'role:user'])->group(function () {
  Route::post('/cart/add', [CartController::class, 'add']);
- Route::post('/checkout', [CheckoutController::class, 'checkout']);
+ 
 
 
 });
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
-
+Route::post('/checkout', [CheckoutController::class, 'checkout']);
 Route::get('/getallproduct', [ProductController::class, 'getallproduct']);
 Route::get('/baseline', [ProductController::class, 'baseline']);
 Route::get('/loadBalancedFetchParallel', [ProductController::class, 'loadBalancedFetchParallel']);
+ Route::post('/products', [ProductController::class, 'store']);
